@@ -6,15 +6,110 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(248, 248, 248);
 }
 
 
 .App {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 30em;
   justify-content: center;
   align-items: center;
-
-  height: 100vh;
-  border: 3px solid green;
 }
+
+.task {
+  white-space: initial;
+  display:grid;
+  grid-template-columns: auto auto;
+  justify-content:space-between;
+  margin: 0.2em 0em;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 1em 2em;
+  border: 2px solid rgb(129, 129, 129);
+  border-radius: 1em;
+}
+
+.task:hover {
+  font-size: 1.01em;
+  cursor: pointer;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.task-action-container {
+  display: flex;
+  width: 4em;
+  justify-content: space-around;
+}
+
+.cross {
+  height: fit-content;
+  color: red;
+  font-size: 2em;
+}
+
+.tick {
+  color: green;
+}
+
+.cross:hover {
+  animation-name: rotate360;
+  animation-duration: 1.5s;
+  animation-delay: 1ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate360 {
+  /*
+  0%   {transform: rotate(0deg);font-size: 1em;}
+  25%  {transform: rotate(45deg);font-size: 1.25em;}
+  50%  {transform: rotate(90deg);font-size: 1.5em;}
+  75%  {transform: rotate(135deg);font-size: 1.75em;}
+  100% {transform: rotate(180deg);font-size: 2em;}
+  */
+  from {transform: rotate(0deg);font-weight: 500;}
+  to {transform: rotate(360deg);font-weight: 900;font-size: 2em;}
+}
+
+
+.tasksContainer {
+  margin-top: 2em;
+}
+
+.addTask {
+  padding-top: 2em;
+}
+
+.addTask > form {
+  display: flex;
+  justify-content:space-between;
+}
+
+.addTask > form > input[type=text] {
+  font-size: 1.25em;
+  width: 30em;
+  padding: 0em 1em;
+  border:2px solid rgb(129, 129, 129);
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 0.8em;
+  margin-right: 1em;
+}
+
+.addTask > form > input[type=submit] {
+
+  font-weight: 900;
+  background-color: rgb(30, 128, 0);
+  color: white;
+  font-size: large;
+  padding: 0.5em;
+  border: 2px solid rgb(129, 129, 129);
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 1em;
+}
+
+.addTask > form > input[type=submit]:hover {
+
+  background-color: white;
+  color: rgb(30, 128, 0);
+}
+
