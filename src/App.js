@@ -18,7 +18,6 @@ function App(props) {
   */
 
   const [allTasks, setallTasks] = useState([])
-  const [newTask, setnewTask] = useState('')
 
 
   const displayTasks = (allTasks) => {
@@ -35,8 +34,8 @@ function App(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    allTasks.push(newTask);
-    setallTasks(allTasks);
+    setallTasks(allTasks.concat([event.target.task.value]));
+  
   }
 
 
@@ -45,7 +44,7 @@ function App(props) {
 
       <div className="addTask">
         <form onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => setnewTask(e.target.value)} value={newTask} />
+          <input type="text"name='task' />
           <input type="submit" value="Add Task" />
         </form>
       </div>
@@ -53,7 +52,6 @@ function App(props) {
       <div className="tasksContainer">
         {displayTasks(allTasks)}
       </div>
-
     </div>
   );
 }

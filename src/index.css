@@ -60,16 +60,10 @@ body {
 }
 
 @keyframes rotate360 {
-  /*
-  0%   {transform: rotate(0deg);font-size: 1em;}
-  25%  {transform: rotate(45deg);font-size: 1.25em;}
-  50%  {transform: rotate(90deg);font-size: 1.5em;}
-  75%  {transform: rotate(135deg);font-size: 1.75em;}
-  100% {transform: rotate(180deg);font-size: 2em;}
-  */
   from {transform: rotate(0deg);font-weight: 500;}
   to {transform: rotate(360deg);font-weight: 900;font-size: 2em;}
 }
+
 
 
 .tasksContainer {
