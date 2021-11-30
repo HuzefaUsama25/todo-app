@@ -1,8 +1,11 @@
 import React from 'react';
 
+import confetti from './confetti.gif'
 
 function Task(props) {
-    
+
+    document.body.style.backgroundImage = ""
+
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
     const handleDeleteTask = async () => {
@@ -21,11 +24,15 @@ function Task(props) {
     }
 
     const handleCompleteTask = () => {
+
+        let body = document.getElementsByTagName('body')[0]
         let task = document.getElementById(props.id)
+
+        body.style.backgroundImage = "url('./confetti.gif');"
         task.style['background-color'] = 'rgb(0, 255, 128)';
         task.animate(
             [
-                { transform: 'scale(2, 2)' , opacity: '150%' }
+                { transform: 'scale(2, 2)', opacity: '150%' }
             ],
             {
                 duration: 2,

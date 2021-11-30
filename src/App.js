@@ -1,21 +1,8 @@
 import Task from "./components/Task";
 import { useState } from 'react'
 
+
 function App(props) {
-  /*
-  let tasks =
-      [
-        "Do the Dishes",
-        "Complete HomeWork",
-        "Take a Bath",
-        "Go to Swim",
-        "Walk the pet",
-        "Study for Exam",
-        "Do Programming",
-        "Complete Task App",
-        "Update Instagram Biography"
-      ];
-  */
 
   const [allTasks, setallTasks] = useState([])
 
@@ -35,7 +22,8 @@ function App(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setallTasks(allTasks.concat([event.target.task.value]));
-  
+    document.getElementsByTagName('input')[0].value = null;
+
   }
 
 
@@ -44,7 +32,7 @@ function App(props) {
 
       <div className="addTask">
         <form onSubmit={handleSubmit}>
-          <input type="text"name='task' />
+          <input type="text" name='task' />
           <input type="submit" value="Add Task" />
         </form>
       </div>
@@ -52,6 +40,7 @@ function App(props) {
       <div className="tasksContainer">
         {displayTasks(allTasks)}
       </div>
+
     </div>
   );
 }
