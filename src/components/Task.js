@@ -12,14 +12,14 @@ function Task(props) {
         let task = document.getElementById(props.id)
         task.animate(
             [
-                { transform: 'scale(0, 0) translateX(30em)', opacity: '0' }
+                { transform: 'scale(-1, -1) translateX(50em)', opacity: '0' }
             ],
             {
-                duration: 500,
+                duration: 300,
                 iterations: 1,
             }
         );
-        await delay(500)
+        await delay(300)
         task.remove()
     }
 
@@ -28,15 +28,14 @@ function Task(props) {
         let body = document.getElementsByTagName('body')[0]
         let task = document.getElementById(props.id)
 
-        body.style.backgroundImage = "url('./confetti.gif');"
         task.style['background-color'] = 'rgb(0, 255, 128)';
         task.animate(
             [
                 { transform: 'scale(2, 2)', opacity: '150%' }
             ],
             {
-                duration: 2,
-                iterations: 100,
+                duration: 500,
+                iterations: 1,
             }
         );
     }

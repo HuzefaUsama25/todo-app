@@ -1,6 +1,6 @@
 import Task from "./components/Task";
 import { useState } from 'react'
-
+import logo from './logo.png'
 
 function App(props) {
 
@@ -29,6 +29,10 @@ function App(props) {
 
   return (
     <div className="App">
+      <div className="header">
+        <img src={logo} />
+        <h1>#1 Todo App</h1>
+      </div>
 
       <div className="addTask">
         <form onSubmit={handleSubmit}>

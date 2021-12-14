@@ -1,3 +1,9 @@
+* {
+  -webkit-user-drag: none;
+  user-select:none;
+}
+
+
 body {
   margin: 0px;
   padding: 0px;
@@ -18,6 +24,52 @@ body {
 
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+h1 {
+  margin-right: 3.5em;
+}
+
+h1:hover {
+  animation-name: jiggle;
+  animation-duration: 4s;
+  animation-delay: 1ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes jiggle {
+  25% {
+    transform: rotate(0deg);font-weight: 500;
+  }
+
+  50% {
+    transform: rotate(360deg);font-weight: 900;font-size: 2em;
+  }
+  75% {
+    transform: rotate(0deg);font-weight: 500;
+  }
+}
+
+
+img {
+  animation-name: rotate360;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+}
+
+
+img:hover {
+  animation-name: rotate360;
+  animation-duration: 1.5s;
+  animation-delay: 1ms;
+  animation-iteration-count: infinite;
+}
 
 
 .task {
@@ -75,7 +127,7 @@ body {
 }
 
 .addTask {
-  padding-top: 2em;
+  margin-top: 2em;
 }
 
 .addTask > form {
